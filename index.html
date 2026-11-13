@@ -32,6 +32,7 @@
   }
   </script>
 
+  <script>document.documentElement.classList.add("js");</script>
   <style>
     :root {
       --wine-950: #2a0c12;
@@ -250,6 +251,19 @@
     .card h3 { font-size: 26px; color: var(--wine-800); margin-bottom: 10px; }
     .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
 
+    /* CTAs com atraso — ficam escondidos até 2s depois de o utilizador chegar à secção (ver script) */
+    .delayed-cta {
+      margin-top: 44px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 18px 28px;
+      text-align: center;
+      transition: opacity .7s ease, transform .7s ease, visibility .7s;
+    }
+    .delayed-cta p { margin: 0; font-family: var(--serif); font-size: 24px; line-height: 1.3; color: var(--wine-800); }
+    .delayed-cta p span { color: var(--gold-deep); font-style: italic; }
+    .js .delayed-cta:not(.show) { opacity: 0; transform: translateY(16px); visibility: hidden; }
+    .approach .delayed-cta { position: relative; }
+    .approach .delayed-cta p { color: var(--cream); }
+    .approach .delayed-cta p span { color: var(--gold-light); }
+
     /* Approach */
     .approach { background: linear-gradient(170deg, var(--wine-800), var(--wine-950)); color: var(--cream); position: relative; overflow: hidden; }
     .approach::before {
@@ -266,15 +280,37 @@
     .step p { margin: 0; color: rgba(248,242,234,.75); font-size: 15.5px; }
 
     /* Formation */
-    .formation .container { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: center; }
-    .formation .container { align-items: start; }
-    .formation .section-head { margin-bottom: 0; position: sticky; top: 100px; }
+    .formation .container { display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; row-gap: 48px; align-items: end; }
+    .formation .section-head { margin-bottom: 0; max-width: none; }
+    .formation-intro > p { margin: 0; color: var(--muted); }
+    .formation-intro .research { margin-top: 24px; }
+    .formation-pubs { grid-column: 1 / -1; }
 
-    .pubs { margin-top: 0; }
-    .pubs h3 { font-size: 26px; color: var(--wine-800); margin: 0 0 6px; }
-    .pubs ol { list-style: none; margin: 0; padding: 0; }
+    .pubs {
+      margin-top: 0; background: var(--white); border-radius: var(--radius);
+      border: 1px solid rgba(169,130,76,.2); transition: border-color .3s ease, box-shadow .3s ease;
+    }
+    .pubs:hover, .pubs[open] { border-color: rgba(169,130,76,.45); }
+    .pubs[open] { box-shadow: var(--shadow); }
+    .pubs summary {
+      list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; align-items: center; column-gap: 18px;
+      padding: 26px 30px; border-radius: var(--radius);
+    }
+    .pubs summary::-webkit-details-marker { display: none; }
+    .pubs summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .pubs h3 { font-size: 26px; color: var(--wine-800); margin: 0; }
+    .pubs .pubs-count { grid-column: 1; display: block; margin-top: 4px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); }
+    .pubs .chevron {
+      grid-column: 2; grid-row: 1 / span 2;
+      width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center;
+      background: var(--wine-800); color: var(--gold-light); transition: transform .3s ease, background .3s ease;
+    }
+    .pubs .chevron svg { width: 20px; height: 20px; }
+    .pubs summary:hover .chevron { background: var(--wine-700); }
+    .pubs[open] .chevron { transform: rotate(180deg); }
+    .pubs-body { padding: 0 30px 10px; }
+    .pubs ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 48px; }
     .pubs li { padding: 18px 0; border-top: 1px solid rgba(169,130,76,.2); }
-    .pubs li:last-child { border-bottom: 1px solid rgba(169,130,76,.2); }
     .pubs a { color: var(--ink); text-decoration: none; font-size: 16px; line-height: 1.45; display: block; overflow-wrap: anywhere; }
     .pubs a:hover { color: var(--wine-700); }
     .pubs small { display: block; margin-top: 6px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); }
@@ -390,8 +426,8 @@
       .cred strong { font-size: 22px; }
 
       .about .container, .formation .container, .location .container { grid-template-columns: 1fr; }
-      .formation .container { gap: 32px; }
-      .formation .section-head { position: static; margin-bottom: 0; }
+      .formation .container { row-gap: 28px; }
+      .pubs ol { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; }
       .quote-card { padding: 40px 28px; }
     }
@@ -402,6 +438,9 @@
       .brand-name span { font-size: 9.5px; letter-spacing: .2em; }
       .brand-mark { width: 38px; height: 38px; font-size: 17px; }
       .grid-3 { grid-template-columns: 1fr; gap: 16px; }
+      .delayed-cta { margin-top: 32px; }
+      .delayed-cta p { font-size: 21px; }
+      .delayed-cta .btn { width: 100%; }
       .card, .step { padding: 28px 24px; }
       .hero-actions .btn { width: 100%; }
       .section-head { margin-bottom: 36px; }
@@ -410,6 +449,9 @@
       .info-card .btn { width: 100%; }
       .map, .map iframe { min-height: 320px; }
       .research { grid-template-columns: 1fr; padding: 24px 22px; }
+      .pubs summary { padding: 22px 22px; }
+      .pubs-body { padding: 0 22px 22px; }
+      .pubs h3 { font-size: 23px; }
       .cta .btn { width: 100%; }
       .footer .container { flex-direction: column; text-align: center; padding-bottom: 96px; }
     }
@@ -551,6 +593,13 @@
             <p>Consultas de avaliação, orientação e transformação de hábitos para uma boca saudável ao longo da vida.</p>
           </article>
         </div>
+        <div class="delayed-cta">
+          <p>Não sabe qual o tratamento indicado para si? <span>Marque uma consulta de avaliação.</span></p>
+          <a class="btn btn-gold wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.37 9.37 0 0 1 6.67 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.05.7C5.8.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+            Marcar consulta
+          </a>
+        </div>
       </div>
     </section>
 
@@ -579,6 +628,13 @@
             <p>Novos hábitos e acompanhamento contínuo para resultados que duram muito além da cadeira do dentista.</p>
           </div>
         </div>
+        <div class="delayed-cta">
+          <p>Tempo para ouvir, esclarecer e compreender. <span>É assim que começa a sua consulta.</span></p>
+          <a class="btn btn-gold wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.37 9.37 0 0 1 6.67 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.05.7C5.8.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+            Marcar consulta
+          </a>
+        </div>
       </div>
     </section>
 
@@ -588,15 +644,22 @@
         <div class="section-head reveal">
           <span class="eyebrow">Formação</span>
           <h2>Cuidar, pesquisar e partilhar conhecimento</h2>
+        </div>
+        <div class="formation-intro reveal">
           <p>Além da prática clínica, dedico-me à investigação e ao ensino, mantendo-me em constante atualização para oferecer um cuidado cada vez mais completo e baseado em evidência.</p>
           <div class="research">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5 12 4l10 4.5L12 13 2 8.5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8.5V14"/></svg></div>
             <p><strong>Investigação &amp; ensino</strong>Ciência e docência ao serviço de um cuidado clínico cada vez mais atual.</p>
           </div>
         </div>
-        <div>
-          <div class="pubs reveal" id="artigos">
-            <h3>Publicações científicas</h3>
+        <div class="formation-pubs">
+          <details class="pubs reveal" id="artigos">
+            <summary>
+              <h3>Publicações científicas</h3>
+              <span class="pubs-count">12 artigos · PubMed</span>
+              <span class="chevron" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </summary>
+            <div class="pubs-body">
             <ol>
               <li><a href="https://pubmed.ncbi.nlm.nih.gov/41840681/" target="_blank" rel="noopener" lang="en">Investigating the Association Between Oral Hygiene and Oral Cancer: A Systematic Review and Meta-Analysis<small>Oral Diseases · 2026</small></a></li>
               <li><a href="https://pubmed.ncbi.nlm.nih.gov/41382044/" target="_blank" rel="noopener" lang="en">Are electronic cigarettes associated with the risk of myocardial infarction and stroke? A systematic review and meta-analysis<small>BMC Public Health · 2025</small></a></li>
@@ -611,7 +674,8 @@
               <li><a href="https://pubmed.ncbi.nlm.nih.gov/26575968/" target="_blank" rel="noopener" lang="en">Dental Anomalies in a Brazilian Cleft Population<small>Cleft Palate-Craniofacial Journal · 2016</small></a></li>
               <li><a href="https://pubmed.ncbi.nlm.nih.gov/26198054/" target="_blank" rel="noopener" lang="en">Genetic risk factors for nonsyndromic cleft lip with or without cleft palate in a Brazilian population with high African ancestry<small>American Journal of Medical Genetics A · 2015</small></a></li>
             </ol>
-          </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -690,6 +754,21 @@
       document.querySelectorAll("#nav a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
       document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
 
+      // CTAs com atraso (Tratamentos, A minha consulta): aparecem 2s depois de a secção entrar no ecrã
+      var CTA_DELAY = 2000;
+      document.querySelectorAll(".delayed-cta").forEach(function (cta) {
+        var show = function () { cta.classList.add("show"); };
+        var section = cta.closest("section");
+        if (!("IntersectionObserver" in window) || !section) { show(); return; }
+        var ctaIo = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            ctaIo.disconnect();
+            setTimeout(show, CTA_DELAY);
+          }
+        }, { threshold: 0, rootMargin: "0px 0px -30% 0px" });
+        ctaIo.observe(section);
+      });
+
       var items = document.querySelectorAll(".reveal");
       if ("IntersectionObserver" in window) {
         var io = new IntersectionObserver(function (entries) {
@@ -701,6 +780,15 @@
       } else {
         items.forEach(function (el) { el.classList.add("in"); });
       }
+
+      // Abrir as publicações ao navegar para #artigos (menu ou link direto)
+      var pubs = document.getElementById("artigos");
+      var openPubs = function () { if (location.hash === "#artigos") pubs.open = true; };
+      openPubs();
+      window.addEventListener("hashchange", openPubs);
+      document.querySelectorAll('a[href="#artigos"]').forEach(function (a) {
+        a.addEventListener("click", function () { pubs.open = true; });
+      });
 
       document.getElementById("year").textContent = new Date().getFullYear();
     })();
