@@ -237,7 +237,10 @@
 
     /* Services */
     .services { background: var(--white); }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 22px; }
+    .grid-3 > .card { grid-column: span 2; }
+    /* Se sobrar um cartão sozinho na última linha, fica centrado */
+    .grid-3 > .card:last-child:nth-child(3n+1) { grid-column: 3 / span 2; }
     .card {
       position: relative; padding: 34px 30px; border-radius: var(--radius); background: var(--cream);
       border: 1px solid rgba(169,130,76,.18); transition: transform .3s ease, box-shadow .3s ease, border-color .3s;
@@ -406,6 +409,7 @@
     /* ---------- Responsive ---------- */
     @media (max-width: 1024px) {
       .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 > .card, .grid-3 > .card:last-child:nth-child(3n+1) { grid-column: auto; }
       .about .container, .formation .container { gap: 48px; }
     }
 
@@ -580,18 +584,18 @@
         <div class="section-head center reveal">
           <span class="eyebrow">Tratamentos</span>
           <h2>Cuidado completo, baseado em evidência</h2>
-          <p>Áreas de atuação que unem experiência clínica, investigação e um olhar atento para a pessoa por trás de cada sorriso.</p>
+          <p>Áreas de atuação que unem experiência clínica, investigação e um olhar atento para a pessoa por trás de cada sorriso, com o apoio de uma equipa multidisciplinar para um cuidado completo.</p>
         </div>
         <div class="grid-3">
           <article class="card reveal">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="6.5" r="2.5"/><circle cx="16.5" cy="8.5" r="2"/><path d="M3.5 20v-2.5A4.5 4.5 0 0 1 8 13a4.5 4.5 0 0 1 4.5 4.5V20"/><path d="M13 20v-2a3.5 3.5 0 0 1 7 0v2"/></svg></div>
             <h3>Médica Dentista da Família</h3>
-            <p>Atendimento dos 06 meses aos 100 anos.</p>
+            <p>Atendemos toda a família, dos mais pequenos aos avós, com um acompanhamento próximo em cada fase da vida.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3C4.5 3 3 5.5 3.5 8.5c.4 2.5 1.5 4 2 7 .4 2.6 1 5.5 2.3 5.5s1.7-2.4 2.2-4.6c.4-1.6.9-2.4 2-2.4s1.6.8 2 2.4c.5 2.2.9 4.6 2.2 4.6s1.9-2.9 2.3-5.5c.5-3 1.6-4.5 2-7C21 5.5 19.5 3 16.5 3c-2 0-3 1-4.5 1S9.5 3 7.5 3z"/><path d="M12 9v5"/></svg></div>
             <h3>Endodontia</h3>
-            <p>Tratamento de canal com precisão, para aliviar a dor e preservar o seu dente natural sempre que possível.</p>
+            <p>Tratamento de canal ou desvitalização, para aliviar a dor e preservar o seu dente natural sempre que possível.</p>
           </article>
           <article class="card reveal">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10c0-4 3.6-7 8-7s8 3 8 7"/><path d="M4 14c0 4 3.6 7 8 7s8-3 8-7"/><path d="M7 12h10"/><path d="M9 10v4M12 10v4M15 10v4"/></svg></div>
@@ -609,11 +613,27 @@
             <p>Procedimentos que valorizam a sua beleza natural, com equilíbrio, segurança e respeito pela sua identidade.</p>
           </article>
           <article class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.2-9.6C1.6 7.8 4 4.5 7.4 4.5c2 0 3.4 1 4.6 2.6 1.2-1.6 2.6-2.6 4.6-2.6 3.4 0 5.8 3.3 4.6 6.9C19.5 16.4 12 21 12 21z"/></svg></div>
-            <h3>Saúde Oral &amp; Prevenção</h3>
-            <p>Consultas de avaliação, orientação e transformação de hábitos para uma boca saudável ao longo da vida.</p>
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12h19"/><rect x="4.5" y="9" width="3.5" height="6" rx="1"/><rect x="10.25" y="9" width="3.5" height="6" rx="1"/><rect x="16" y="9" width="3.5" height="6" rx="1"/></svg></div>
+            <h3>Ortodontia</h3>
+            <p>Aparelhos ortodônticos para alinhar os dentes e corrigir a mordida, com um plano adaptado a cada fase da vida.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5c-2 0-3.5 1.4-3.5 3.3S6 9.5 8 9.5h8c2 0 3.5-1.8 3.5-3.7S18 2.5 16 2.5c-1.7 0-2.6.8-4 .8s-2.3-.8-4-.8z"/><path d="M9 9.5v2.5h6V9.5"/><path d="M12 12v9.5"/><path d="M9.5 14.5h5M10 17h4M10.5 19.5h3"/></svg></div>
+            <h3>Implantes Dentários</h3>
+            <p>Reposição de dentes perdidos com implantes, devolvendo conforto, função e confiança ao sorriso.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10c0-3.3 3.6-5.5 8-5.5s8 2.2 8 5.5"/><path d="M4 10v2c0 .8.7 1.5 1.5 1.5h13c.8 0 1.5-.7 1.5-1.5v-2"/><path d="M8 10v3.5M12 10v3.5M16 10v3.5"/><path d="M5.5 17c1.6 1.8 3.9 2.8 6.5 2.8s4.9-1 6.5-2.8"/></svg></div>
+            <h3>Prótese Dentária</h3>
+            <p>Soluções de prótese para recuperar a mastigação, a estética e a qualidade de vida.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 3l1.8 4.7 4.7 1.8-4.7 1.8L11 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M18 14.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div>
+            <h3>Estética Dentária</h3>
+            <p>Branqueamento e restaurações estéticas para um sorriso mais luminoso, harmonioso e natural.</p>
           </article>
         </div>
+
         <div class="delayed-cta">
           <p>Não sabe qual o tratamento indicado para si? <span>Marque uma consulta de avaliação.</span></p>
           <a class="btn btn-gold btn-live wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener">
