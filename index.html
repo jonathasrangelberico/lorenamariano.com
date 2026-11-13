@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dra. Lorena Mariano · Médica Dentista no Porto</title>
+  <meta name="description" content="Dra. Lorena Mariano — Médica Dentista da família no Porto, Rua de Santa Catarina, 375. Atendimento dos 6 meses aos 100 anos. Especialista em Endodontia, Mestre em Estomatologia e Patologia Oral e Doutorada em Medicina Regenerativa pela Universidade do Porto.">
+  <meta name="theme-color" content="#4a1520">
+  <meta property="og:title" content="Dra. Lorena Mariano · Dentista além dos dentes">
+  <meta property="og:description" content="Cuidar | Pesquisar | Partilhar. Clínica dentária na Rua de Santa Catarina, 375, Porto.">
+  <meta property="og:image" content="assets/lorena-mariano.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234a1520'/%3E%3Cpath d='M20 18c-6 0-9 5-8 11 1 5 3 8 4 14 1 4 2 7 4 7s3-3 4-8c1-3 2-5 4-5s3 2 4 5c1 5 2 8 4 8s3-3 4-7c1-6 3-9 4-14 1-6-2-11-8-11-4 0-6 2-8 2s-4-2-8-2z' fill='none' stroke='%23d8b47c' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dra. Lorena Mariano — Médica Dentista",
+    "url": "https://lorenamariano.com",
+    "image": "https://lorenamariano.com/assets/lorena-mariano.jpg",
+    "telephone": "+351221130281",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua de Santa Catarina, 375",
+      "addressLocality": "Porto",
+      "addressCountry": "PT"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --wine-950: #2a0c12;
+      --wine-900: #3b1119;
+      --wine-800: #4a1520;
+      --wine-700: #66202d;
+      --wine-500: #8c3a47;
+      --gold: #c9a26b;
+      --gold-light: #e6cc9f;
+      --gold-deep: #a9824c;
+      --cream: #f8f2ea;
+      --cream-2: #efe5d8;
+      --ink: #2b1a1d;
+      --muted: #6e5a5d;
+      --white: #fffdf9;
+
+      --serif: "Cormorant Garamond", "Times New Roman", serif;
+      --sans: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+      --radius: 18px;
+      --shadow: 0 20px 50px -20px rgba(42, 12, 18, .35);
+      --gutter: clamp(16px, 5vw, 48px);
+      --max: 1180px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+    h1, h2, h3, .portrait-badge strong, .step .num, .cred strong { font-variant-numeric: lining-nums; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.08; margin: 0; letter-spacing: -.01em; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 12.5px; letter-spacing: .28em; text-transform: uppercase; font-weight: 500;
+      color: var(--gold-deep);
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    .gold-text {
+      background: linear-gradient(100deg, var(--gold-deep) 0%, var(--gold-light) 45%, var(--gold) 70%, var(--gold-deep) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 28px; border-radius: 999px;
+      font-family: var(--sans); font-size: 15px; font-weight: 500; letter-spacing: .04em;
+      text-decoration: none; cursor: pointer; border: 1px solid transparent;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+    }
+    .btn svg { width: 20px; height: 20px; flex: none; }
+    .btn-gold {
+      background: linear-gradient(120deg, var(--gold-deep), var(--gold) 50%, var(--gold-light));
+      color: var(--wine-950);
+      box-shadow: 0 12px 30px -12px rgba(201, 162, 107, .7);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 36px -12px rgba(201, 162, 107, .85); }
+    .btn-ghost { border-color: rgba(230, 204, 159, .5); color: var(--gold-light); }
+    .btn-ghost:hover { background: rgba(230, 204, 159, .1); }
+    .btn-wine { background: var(--wine-800); color: var(--cream); }
+    .btn-wine:hover { background: var(--wine-700); transform: translateY(-2px); }
+
+    /* Header */
+    .header {
+      position: fixed; inset: 0 0 auto 0; z-index: 50;
+      transition: background .3s ease, box-shadow .3s ease, padding .3s ease;
+      padding: 18px 0;
+    }
+    .header.scrolled {
+      box-shadow: 0 10px 30px -15px rgba(0,0,0,.5);
+      padding: 10px 0;
+    }
+    /* Blur on a pseudo-element: backdrop-filter on .header itself would trap the fixed mobile .nav overlay inside the header box */
+    .header::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: rgba(59, 17, 25, .92);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+      opacity: 0; transition: opacity .3s ease;
+    }
+    .header.scrolled::before { opacity: 1; }
+    .header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--cream); }
+    .brand-mark {
+      width: 42px; height: 42px; flex: none; border: 1px solid var(--gold); border-radius: 50%;
+      display: grid; place-items: center; font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--gold-light);
+      letter-spacing: -.04em;
+    }
+    .brand-name { display: flex; flex-direction: column; line-height: 1.1; }
+    .brand-name strong { font-family: var(--serif); font-size: 20px; font-weight: 600; }
+    .brand-name span { font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-light); }
+
+    .nav { display: flex; align-items: center; gap: 30px; }
+    .nav a { text-decoration: none; color: var(--cream); font-size: 14.5px; letter-spacing: .05em; opacity: .85; transition: opacity .2s, color .2s; }
+    .nav a:hover { opacity: 1; color: var(--gold-light); }
+    .nav .btn { min-height: 44px; padding: 0 20px; opacity: 1; color: var(--wine-950); }
+    .menu-toggle {
+      display: none; width: 44px; height: 44px; border: 1px solid rgba(230,204,159,.4); border-radius: 50%;
+      background: transparent; color: var(--gold-light); cursor: pointer; place-items: center;
+    }
+    .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
+      display: block; width: 18px; height: 1.5px; background: currentColor; position: relative; transition: transform .3s, background .3s;
+    }
+    .menu-toggle span::before, .menu-toggle span::after { content: ""; position: absolute; left: 0; }
+    .menu-toggle span::before { top: -6px; }
+    .menu-toggle span::after { top: 6px; }
+    .menu-open .menu-toggle span { background: transparent; }
+    .menu-open .menu-toggle span::before { transform: translateY(6px) rotate(45deg); }
+    .menu-open .menu-toggle span::after { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(80% 60% at 85% 20%, rgba(140, 58, 71, .45), transparent 60%),
+        radial-gradient(60% 50% at 0% 100%, rgba(201, 162, 107, .12), transparent 60%),
+        linear-gradient(160deg, var(--wine-800), var(--wine-950));
+      color: var(--cream);
+      padding: 130px 0 90px;
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 900px; height: 900px; border-radius: 50%;
+      border: 1px solid rgba(201, 162, 107, .35); right: -420px; top: -260px; pointer-events: none;
+    }
+    .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
+    .hero h1 { font-size: clamp(44px, 6.4vw, 84px); font-weight: 500; margin: 18px 0 8px; }
+    .hero h1 em { font-style: normal; font-weight: 700; display: block; }
+    .hero .eyebrow { color: var(--gold-light); }
+    .pillars { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 22px 0 18px; font-family: var(--serif); font-size: 22px; font-style: italic; color: var(--gold-light); }
+    .pillars i { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); display: inline-block; }
+    .hero p.lead { font-size: 18px; font-weight: 300; max-width: 520px; color: rgba(248, 242, 234, .85); margin: 0 0 32px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-flags { margin-top: 30px; font-size: 13.5px; letter-spacing: .08em; color: rgba(248,242,234,.65); display: flex; align-items: center; gap: 10px; }
+
+    .portrait { position: relative; justify-self: center; width: min(100%, 440px); }
+    .portrait-frame {
+      position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px 24px 24px; overflow: hidden;
+      box-shadow: 0 40px 80px -30px rgba(0,0,0,.6);
+      background: var(--cream-2);
+    }
+    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+    .portrait::before {
+      content: ""; position: absolute; inset: -14px; border-radius: 999px 999px 32px 32px;
+      border: 1px solid var(--gold); opacity: .7; pointer-events: none;
+    }
+    .portrait-badge {
+      position: absolute; left: -26px; bottom: 34px;
+      background: var(--cream); color: var(--wine-800); border-radius: 16px; padding: 14px 18px;
+      box-shadow: var(--shadow); display: flex; align-items: center; gap: 12px;
+    }
+    .portrait-badge strong { font-family: var(--serif); font-size: 38px; line-height: 1; font-weight: 700; }
+    .portrait-badge span { font-size: 12.5px; line-height: 1.3; letter-spacing: .04em; color: var(--muted); }
+
+    /* Credentials strip */
+    .creds { background: var(--wine-950); color: var(--cream); border-top: 1px solid rgba(201,162,107,.25); }
+    .cred-main { padding: 36px 20px 30px; text-align: center; border-bottom: 1px solid rgba(201,162,107,.18); }
+    .cred-main strong { display: block; font-family: var(--serif); font-size: clamp(34px, 4.4vw, 48px); font-weight: 600; letter-spacing: .06em; line-height: 1.1; }
+    .cred-main .sub { display: block; margin-top: 8px; font-family: var(--serif); font-size: clamp(20px, 2.4vw, 26px); font-style: italic; color: var(--cream); }
+    .cred-main .ages { display: block; margin-top: 4px; font-size: 15px; letter-spacing: .08em; color: var(--gold-light); }
+    .cred-main .tags { display: block; margin-top: 14px; font-size: 12.5px; letter-spacing: .24em; text-transform: uppercase; color: rgba(248,242,234,.7); }
+    .cred-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .cred { padding: 28px 20px; text-align: center; border-left: 1px solid rgba(201,162,107,.18); }
+    .cred:first-child { border-left: 0; }
+    .cred strong { display: block; font-family: var(--serif); font-size: 26px; line-height: 1.15; font-weight: 600; color: var(--gold-light); margin-bottom: 6px; }
+    .cred span { display: block; font-size: 13.5px; line-height: 1.5; color: rgba(248,242,234,.7); letter-spacing: .03em; }
+
+    /* Sections */
+    section, #artigos { scroll-margin-top: 70px; }
+    .section { padding: clamp(72px, 10vw, 120px) 0; }
+    .section-head { max-width: 640px; margin-bottom: 48px; }
+    .section-head h2 { font-size: clamp(36px, 4.6vw, 54px); margin: 14px 0 14px; color: var(--wine-800); }
+    .section-head p { color: var(--muted); margin: 0; }
+    .center { text-align: center; margin-left: auto; margin-right: auto; }
+    .center .eyebrow::after { content: ""; width: 28px; height: 1px; background: currentColor; }
+
+    /* About */
+    .about .container { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; align-items: center; }
+    .quote-card {
+      position: relative; background: var(--wine-800); color: var(--cream); border-radius: var(--radius);
+      padding: 48px 40px; box-shadow: var(--shadow); overflow: hidden;
+    }
+    .quote-card::before {
+      content: "“"; position: absolute; top: -40px; left: 18px; font-family: var(--serif); font-size: 220px; color: rgba(201,162,107,.2); line-height: 1;
+    }
+    .quote-card blockquote { position: relative; margin: 0; font-family: var(--serif); font-size: clamp(26px, 3vw, 34px); line-height: 1.25; font-weight: 500; }
+    .quote-card blockquote em { color: var(--gold-light); font-style: italic; }
+    .quote-card cite { display: block; margin-top: 26px; font-style: normal; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-light); }
+    .about-text p { margin: 0 0 18px; color: #4a3a3d; }
+    .about-text p:first-of-type { font-family: var(--serif); font-size: 24px; line-height: 1.4; color: var(--wine-800); font-weight: 500; }
+    .about-text strong { color: var(--wine-700); font-weight: 600; }
+
+    /* Services */
+    .services { background: var(--white); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      position: relative; padding: 34px 30px; border-radius: var(--radius); background: var(--cream);
+      border: 1px solid rgba(169,130,76,.18); transition: transform .3s ease, box-shadow .3s ease, border-color .3s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(169,130,76,.45); }
+    .card .icon {
+      width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 22px;
+      background: var(--wine-800); color: var(--gold-light);
+    }
+    .card .icon svg { width: 26px; height: 26px; }
+    .card h3 { font-size: 26px; color: var(--wine-800); margin-bottom: 10px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+    /* Approach */
+    .approach { background: linear-gradient(170deg, var(--wine-800), var(--wine-950)); color: var(--cream); position: relative; overflow: hidden; }
+    .approach::before {
+      content: ""; position: absolute; width: 700px; height: 700px; border-radius: 50%;
+      border: 1px solid rgba(201,162,107,.25); left: -380px; bottom: -380px;
+    }
+    .approach .section-head h2 { color: var(--cream); }
+    .approach .section-head p { color: rgba(248,242,234,.75); }
+    .approach .eyebrow { color: var(--gold-light); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; position: relative; }
+    .step { padding: 34px 30px; border: 1px solid rgba(201,162,107,.3); border-radius: var(--radius); background: rgba(255,255,255,.03); }
+    .step .num { font-family: var(--serif); font-size: 54px; line-height: 1; font-weight: 600; }
+    .step h3 { font-size: 28px; margin: 14px 0 10px; color: var(--cream); }
+    .step p { margin: 0; color: rgba(248,242,234,.75); font-size: 15.5px; }
+
+    /* Formation */
+    .formation .container { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: center; }
+    .formation .container { align-items: start; }
+    .formation .section-head { margin-bottom: 0; position: sticky; top: 100px; }
+
+    .pubs { margin-top: 0; }
+    .pubs h3 { font-size: 26px; color: var(--wine-800); margin: 0 0 6px; }
+    .pubs ol { list-style: none; margin: 0; padding: 0; }
+    .pubs li { padding: 18px 0; border-top: 1px solid rgba(169,130,76,.2); }
+    .pubs li:last-child { border-bottom: 1px solid rgba(169,130,76,.2); }
+    .pubs a { color: var(--ink); text-decoration: none; font-size: 16px; line-height: 1.45; display: block; overflow-wrap: anywhere; }
+    .pubs a:hover { color: var(--wine-700); }
+    .pubs small { display: block; margin-top: 6px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); }
+
+    .research {
+      display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: center;
+      background: var(--white); border-radius: var(--radius); padding: 28px 30px; border: 1px solid rgba(169,130,76,.2);
+      margin-top: 36px;
+    }
+    .research .icon { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--cream-2); color: var(--wine-700); }
+    .research .icon svg { width: 26px; height: 26px; }
+    .research p { margin: 0; color: #4a3a3d; font-size: 15.5px; }
+    .research strong { font-family: var(--serif); font-size: 22px; color: var(--wine-800); display: block; margin-bottom: 2px; }
+
+    /* Location */
+    .location { background: var(--cream-2); }
+    .location .container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: stretch; }
+    .info-card { background: var(--white); border-radius: var(--radius); padding: 40px 36px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .info-card h2 { font-size: clamp(34px, 4vw, 46px); color: var(--wine-800); margin: 14px 0 26px; }
+    .info-row { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid rgba(169,130,76,.2); }
+    .info-row svg { width: 22px; height: 22px; flex: none; color: var(--gold-deep); margin-top: 3px; }
+    .info-row small { display: block; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+    .info-row a, .info-row span { font-size: 17px; color: var(--ink); text-decoration: none; }
+    .info-row a:hover { color: var(--wine-700); }
+    .info-card .btn { margin-top: auto; align-self: flex-start; }
+    .info-card .info-row:last-of-type { margin-bottom: 26px; }
+    .map { border-radius: var(--radius); overflow: hidden; min-height: 420px; box-shadow: var(--shadow); background: var(--cream); }
+    .map iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; filter: sepia(.15) saturate(.9); }
+
+    /* CTA */
+    .cta { background: var(--wine-950); color: var(--cream); text-align: center; position: relative; overflow: hidden; }
+    .cta::before, .cta::after {
+      content: ""; position: absolute; border-radius: 50%; border: 1px solid rgba(201,162,107,.25); pointer-events: none;
+    }
+    .cta::before { width: 520px; height: 520px; right: -200px; top: -260px; }
+    .cta::after { width: 380px; height: 380px; left: -160px; bottom: -220px; }
+    .cta h2 { font-size: clamp(38px, 5.4vw, 64px); font-weight: 500; margin: 16px auto 18px; max-width: 760px; }
+    .cta p { max-width: 560px; margin: 0 auto 34px; color: rgba(248,242,234,.75); }
+    .cta .eyebrow { color: var(--gold-light); }
+
+    /* Footer */
+    .footer { background: var(--wine-950); color: rgba(248,242,234,.6); font-size: 14px; border-top: 1px solid rgba(201,162,107,.18); }
+    .footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; padding-bottom: 28px; }
+    .footer a { color: var(--gold-light); text-decoration: none; }
+
+    /* Floating WhatsApp */
+    .wa-float {
+      position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 60;
+      width: 60px; height: 60px; border-radius: 50%; display: grid; place-items: center;
+      background: #25d366; color: #fff; box-shadow: 0 12px 30px -8px rgba(0,0,0,.4);
+      transition: transform .25s ease;
+    }
+    .wa-float:hover { transform: scale(1.07); }
+    .wa-float svg { width: 32px; height: 32px; }
+    .wa-float::after {
+      content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #25d366;
+      animation: pulse 2.4s ease-out infinite;
+    }
+    @keyframes pulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.6); opacity: 0; } }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .wa-float::after { animation: none; }
+    }
+
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .about .container, .formation .container { gap: 48px; }
+    }
+
+    @media (max-width: 880px) {
+      .menu-toggle { display: grid; }
+      .nav {
+        position: fixed; inset: 0; z-index: -1;
+        flex-direction: column; justify-content: safe center; gap: clamp(12px, 3vh, 24px);
+        padding: 96px 24px calc(32px + env(safe-area-inset-bottom));
+        overflow-y: auto; overscroll-behavior: contain;
+        background: rgba(42, 12, 18, .98);
+        opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s;
+      }
+      .nav a { font-family: var(--serif); font-size: clamp(24px, 4.4vh, 30px); letter-spacing: 0; }
+      .nav .btn { font-family: var(--sans); font-size: 16px; margin-top: 10px; min-height: 52px; padding: 0 28px; }
+      .menu-open .nav { opacity: 1; visibility: visible; }
+      .menu-open { overflow: hidden; }
+      .menu-open .wa-float { opacity: 0; visibility: hidden; }
+
+      .hero { padding: 104px 0 64px; text-align: center; }
+      .hero .container { grid-template-columns: 1fr; gap: 44px; }
+      .hero-copy { order: 2; }
+      .portrait { order: 1; width: min(78%, 340px); }
+      .portrait-badge { left: -14px; bottom: 22px; padding: 10px 14px; }
+      .portrait-badge strong { font-size: 30px; }
+      .hero .eyebrow::before { display: none; }
+      .pillars { justify-content: center; font-size: 20px; }
+      .hero p.lead { margin-left: auto; margin-right: auto; font-size: 17px; }
+      .hero-actions { justify-content: center; }
+      .hero-flags { justify-content: center; }
+
+      .creds .container { padding: 0; }
+      .cred-grid { grid-template-columns: repeat(2, 1fr); }
+      .cred-main { padding: 30px var(--gutter) 26px; }
+      .cred-main .tags { letter-spacing: .16em; line-height: 1.9; }
+      .cred { padding: 22px 12px; border-top: 1px solid rgba(201,162,107,.18); }
+      .cred:nth-child(-n+2) { border-top: 0; }
+      .cred:nth-child(odd) { border-left: 0; }
+      .cred strong { font-size: 22px; }
+
+      .about .container, .formation .container, .location .container { grid-template-columns: 1fr; }
+      .formation .container { gap: 32px; }
+      .formation .section-head { position: static; margin-bottom: 0; }
+      .steps { grid-template-columns: 1fr; }
+      .quote-card { padding: 40px 28px; }
+    }
+
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .brand-name strong { font-size: 18px; }
+      .brand-name span { font-size: 9.5px; letter-spacing: .2em; }
+      .brand-mark { width: 38px; height: 38px; font-size: 17px; }
+      .grid-3 { grid-template-columns: 1fr; gap: 16px; }
+      .card, .step { padding: 28px 24px; }
+      .hero-actions .btn { width: 100%; }
+      .section-head { margin-bottom: 36px; }
+      .about-text p:first-of-type { font-size: 21px; }
+      .info-card { padding: 32px 22px; }
+      .info-card .btn { width: 100%; }
+      .map, .map iframe { min-height: 320px; }
+      .research { grid-template-columns: 1fr; padding: 24px 22px; }
+      .cta .btn { width: 100%; }
+      .footer .container { flex-direction: column; text-align: center; padding-bottom: 96px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#inicio" class="brand" aria-label="Dra. Lorena Mariano — início">
+        <span class="brand-mark" aria-hidden="true">LM</span>
+        <span class="brand-name">
+          <strong>Dra. Lorena Mariano</strong>
+          <span>Médica Dentista</span>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#abordagem">Abordagem</a>
+        <a href="#formacao">Formação</a>
+        <a href="#artigos">Artigos</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn btn-gold wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener">Marcar consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-copy">
+          <span class="eyebrow">Médica Dentista · Porto</span>
+          <h1>Dentista <em class="gold-text">além dos dentes</em></h1>
+          <div class="pillars" aria-label="Cuidar, Pesquisar, Partilhar">
+            <span>Cuidar</span><i></i><span>Pesquisar</span><i></i><span>Partilhar</span>
+          </div>
+          <p class="lead">Cuidar do seu sorriso vai muito além de tratar dentes. É sobre saúde, confiança e qualidade de vida.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.37 9.37 0 0 1 6.67 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.05.7C5.8.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+              Marcar consulta
+            </a>
+            <a class="btn btn-ghost" href="#sobre">Conhecer a Dra. Lorena</a>
+          </div>
+          <div class="hero-flags"><span aria-hidden="true">🇧🇷 🇵🇹 🇬🇧</span> Atendimento em português e inglês · Rua de Santa Catarina, 375</div>
+        </div>
+
+        <div class="portrait">
+          <div class="portrait-frame">
+            <img src="assets/lorena-mariano.jpg" alt="Retrato da Dra. Lorena Mariano, médica dentista, sorrindo" width="900" height="1128" fetchpriority="high">
+          </div>
+          <div class="portrait-badge">
+            <strong>10+</strong>
+            <span>anos a cuidar<br>de sorrisos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials -->
+    <div class="creds" aria-label="Credenciais">
+      <div class="container">
+        <div class="cred-main">
+          <strong class="gold-text">Medicina Dentária</strong>
+          <span class="sub">Da infância à idade adulta</span>
+          <span class="ages">Dos 6 meses aos 100 anos</span>
+          <span class="tags">Prevenção · Orientação · Tratamento · Acompanhamento</span>
+        </div>
+        <div class="cred-grid">
+          <div class="cred"><strong>Especialista</strong><span>em Endodontia</span></div>
+          <div class="cred"><strong>Mestre</strong><span>em Estomatologia e Patologia Oral</span></div>
+          <div class="cred"><strong>Doutora</strong><span>em Medicina Regenerativa · Universidade do Porto (FMDUP)</span></div>
+          <div class="cred"><strong>Toxina Botulínica (Botox)</strong><span>Bruxismo · Estética facial<br>Harmonização facial</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="section about" id="sobre">
+      <div class="container">
+        <div class="quote-card reveal">
+          <blockquote>Mais do que títulos, considero-me uma dentista <em>além dos dentes</em>: cuido de pessoas.</blockquote>
+          <cite>— Dra. Lorena Mariano</cite>
+        </div>
+        <div class="about-text reveal">
+          <span class="eyebrow">Sobre mim</span>
+          <div class="section-head" style="margin-bottom: 26px;">
+            <h2>Olá, sou a Lorena Mariano</h2>
+          </div>
+          <p>Acredito que cuidar da saúde oral é, antes de tudo, cuidar de pessoas.</p>
+          <p>Na minha consulta, cada pessoa é recebida de forma individualizada, com tempo para ouvir, esclarecer e compreender as suas necessidades. Gosto de criar uma relação de confiança, para que cada paciente se sinta seguro, ouvido e bem acompanhado.</p>
+          <p>Acompanho diferentes fases da vida, <strong>da infância à idade adulta</strong>, com uma abordagem centrada na prevenção, na saúde e na qualidade de vida. Para mim, uma boa consulta vai muito além de tratar um dente: é orientar, prevenir problemas, transformar hábitos e ajudar cada pessoa a cuidar melhor de si.</p>
+          <p>Porque, para mim, cuidar de um sorriso é também cuidar da pessoa que existe por trás dele.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section services" id="tratamentos">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Tratamentos</span>
+          <h2>Cuidado completo, baseado em evidência</h2>
+          <p>Áreas de atuação que unem experiência clínica, investigação e um olhar atento para a pessoa por trás de cada sorriso.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="6.5" r="2.5"/><circle cx="16.5" cy="8.5" r="2"/><path d="M3.5 20v-2.5A4.5 4.5 0 0 1 8 13a4.5 4.5 0 0 1 4.5 4.5V20"/><path d="M13 20v-2a3.5 3.5 0 0 1 7 0v2"/></svg></div>
+            <h3>Médica Dentista da Família</h3>
+            <p>Atendimento dos 06 meses aos 100 anos.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3C4.5 3 3 5.5 3.5 8.5c.4 2.5 1.5 4 2 7 .4 2.6 1 5.5 2.3 5.5s1.7-2.4 2.2-4.6c.4-1.6.9-2.4 2-2.4s1.6.8 2 2.4c.5 2.2.9 4.6 2.2 4.6s1.9-2.9 2.3-5.5c.5-3 1.6-4.5 2-7C21 5.5 19.5 3 16.5 3c-2 0-3 1-4.5 1S9.5 3 7.5 3z"/><path d="M12 9v5"/></svg></div>
+            <h3>Endodontia</h3>
+            <p>Tratamento de canal com precisão, para aliviar a dor e preservar o seu dente natural sempre que possível.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10c0-4 3.6-7 8-7s8 3 8 7"/><path d="M4 14c0 4 3.6 7 8 7s8-3 8-7"/><path d="M7 12h10"/><path d="M9 10v4M12 10v4M15 10v4"/></svg></div>
+            <h3>Bruxismo &amp; Dor Orofacial</h3>
+            <p>Diagnóstico e acompanhamento do apertar e ranger de dentes, dores de cabeça, tensão na mandíbula e ATM.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20.5 20.5 16 16"/><path d="M8.5 11h5M11 8.5v5"/></svg></div>
+            <h3>Estomatologia &amp; Patologia Oral</h3>
+            <p>Avaliação de lesões e alterações da mucosa oral, com foco na prevenção e no diagnóstico precoce.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4 0-7 3.5-7 8 0 5 3.5 10 7 10s7-5 7-10c0-4.5-3-8-7-8z"/><path d="M9 15.5c1.8 1.3 4.2 1.3 6 0"/><path d="M9.5 10h.01M14.5 10h.01"/></svg></div>
+            <h3>Harmonização Facial</h3>
+            <p>Procedimentos que valorizam a sua beleza natural, com equilíbrio, segurança e respeito pela sua identidade.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.2-9.6C1.6 7.8 4 4.5 7.4 4.5c2 0 3.4 1 4.6 2.6 1.2-1.6 2.6-2.6 4.6-2.6 3.4 0 5.8 3.3 4.6 6.9C19.5 16.4 12 21 12 21z"/></svg></div>
+            <h3>Saúde Oral &amp; Prevenção</h3>
+            <p>Consultas de avaliação, orientação e transformação de hábitos para uma boca saudável ao longo da vida.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="section approach" id="abordagem">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">A minha consulta</span>
+          <h2>Um espaço de escuta, orientação e transformação</h2>
+          <p>Cada pessoa é única. Por isso, cada consulta começa por ouvir — e termina consigo mais consciente e seguro sobre a sua saúde.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num gold-text">01</div>
+            <h3>Escuta</h3>
+            <p>Tempo para compreender a sua história, as suas queixas e aquilo que é importante para si.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num gold-text">02</div>
+            <h3>Orientação</h3>
+            <p>Diagnóstico claro e um plano de tratamento explicado passo a passo, sem pressa e sem dúvidas.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num gold-text">03</div>
+            <h3>Transformação</h3>
+            <p>Novos hábitos e acompanhamento contínuo para resultados que duram muito além da cadeira do dentista.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formation -->
+    <section class="section formation" id="formacao">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Formação</span>
+          <h2>Cuidar, pesquisar e partilhar conhecimento</h2>
+          <p>Além da prática clínica, dedico-me à investigação e ao ensino, mantendo-me em constante atualização para oferecer um cuidado cada vez mais completo e baseado em evidência.</p>
+          <div class="research">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.5 12 4l10 4.5L12 13 2 8.5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8.5V14"/></svg></div>
+            <p><strong>Investigação &amp; ensino</strong>Ciência e docência ao serviço de um cuidado clínico cada vez mais atual.</p>
+          </div>
+        </div>
+        <div>
+          <div class="pubs reveal" id="artigos">
+            <h3>Publicações científicas</h3>
+            <ol>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/41840681/" target="_blank" rel="noopener" lang="en">Investigating the Association Between Oral Hygiene and Oral Cancer: A Systematic Review and Meta-Analysis<small>Oral Diseases · 2026</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/41382044/" target="_blank" rel="noopener" lang="en">Are electronic cigarettes associated with the risk of myocardial infarction and stroke? A systematic review and meta-analysis<small>BMC Public Health · 2025</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/36103586/" target="_blank" rel="noopener" lang="en">Podoplanin could be a predictive biomarker of the risk of patients with oral leukoplakia to develop oral cancer: A systematic review and meta-analysis<small>Oral Diseases · 2024</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/37650876/" target="_blank" rel="noopener" lang="en">Integrative tissue, cellular and molecular responsiveness of an innovative ex vivo model of the Staphylococcus aureus-mediated bone infection<small>FASEB Journal · 2023</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/33903278/" target="_blank" rel="noopener" lang="en">Secondhand smoke exposure and oral cancer risk: a systematic review and meta-analysis<small>Tobacco Control · 2022</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/36278662/" target="_blank" rel="noopener" lang="en">Antimicrobial Biomaterials for the Healing of Infected Bone Tissue: A Systematic Review of Microtomographic Data on Experimental Animal Models<small>Journal of Functional Biomaterials · 2022</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/35087705/" target="_blank" rel="noopener" lang="en">Risk Reversal of Oral, Pharyngeal and Oesophageal Cancers after Cessation of Betel Quid Users: A Systematic Review and Meta-Analysis<small>Annals of Global Health · 2022</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/36194939/" target="_blank" rel="noopener" lang="en">Highly active antiretroviral therapy (HAART) and outcome of cervical lesions and high-risk HPV in women living with HIV (WLHIV): A systematic review and meta-analysis<small>Eur. J. Obstet. Gynecol. Reprod. Biol. · 2022</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/31620264/" target="_blank" rel="noopener" lang="en">Molecular and Cellular Aspects of Socket Healing in the Absence and Presence of Graft Materials and Autologous Platelet Concentrates: a Focused Review<small>Journal of Oral &amp; Maxillofacial Research · 2019</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/31620266/" target="_blank" rel="noopener" lang="en">The 2nd Baltic Osseointegration Academy and Lithuanian University of Health Sciences Consensus Conference 2019. Summary and Consensus Statements: Group I – Biological Aspects of Tooth Extraction, Socket Healing and Indications for Socket Preservation<small>Journal of Oral &amp; Maxillofacial Research · 2019</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/26575968/" target="_blank" rel="noopener" lang="en">Dental Anomalies in a Brazilian Cleft Population<small>Cleft Palate-Craniofacial Journal · 2016</small></a></li>
+              <li><a href="https://pubmed.ncbi.nlm.nih.gov/26198054/" target="_blank" rel="noopener" lang="en">Genetic risk factors for nonsyndromic cleft lip with or without cleft palate in a Brazilian population with high African ancestry<small>American Journal of Medical Genetics A · 2015</small></a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section location" id="contacto">
+      <div class="container">
+        <div class="info-card reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2>Visite-nos no coração do Porto</h2>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <div><small>Morada</small><span>Rua de Santa Catarina, 375<br>Porto, Portugal</span></div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.880 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.760-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.430 9.44-9.43a9.37 9.37 0 0 1 6.67 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.05.7C5.8.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.020z"/></svg>
+            <div><small>WhatsApp</small><a class="wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener">+351 911 838 363</a></div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            <div><small>Telefone (clínica)</small><a href="tel:+351221130281">+351 221 130 281</a></div>
+          </div>
+          <a class="btn btn-wine" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+de+Santa+Catarina+375%2C+Porto%2C+Portugal" target="_blank" rel="noopener">Como chegar</a>
+        </div>
+        <div class="map reveal">
+          <iframe title="Mapa — Rua de Santa Catarina, 375, Porto" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Rua+de+Santa+Catarina+375,+Porto,+Portugal&amp;z=17&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="container">
+        <span class="eyebrow">A saúde começa pela boca</span>
+        <h2>Vamos cuidar do seu sorriso <span class="gold-text">com consciência e segurança?</span></h2>
+        <p>Fale connosco pelo WhatsApp e marque a sua consulta na Rua de Santa Catarina, 375, no Porto.</p>
+        <a class="btn btn-gold wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.37 9.37 0 0 1 6.67 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.05.7C5.8.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+          Marcar pelo WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>© <span id="year">2026</span> Dra. Lorena Mariano · Médica Dentista · Porto</span>
+      <span>Rua de Santa Catarina, 375, Porto · <a href="tel:+351221130281">+351 221 130 281</a> · <a href="tel:+351911838363">+351 911 838 363</a></span>
+    </div>
+  </footer>
+
+  <a class="wa-float wa-link" href="https://wa.me/351911838363" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.37 9.37 0 0 1 6.67 2.77 9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.05.7C5.8.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+  </a>
+
+  <script>
+    (function () {
+      var WA_MSG = "Olá Dra. Lorena! Gostaria de marcar uma consulta.";
+      document.querySelectorAll(".wa-link").forEach(function (a) {
+        a.href = "https://wa.me/351911838363?text=" + encodeURIComponent(WA_MSG);
+      });
+
+      var header = document.getElementById("header");
+      var onScroll = function () { header.classList.toggle("scrolled", window.scrollY > 20); };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      var toggle = document.getElementById("menuToggle");
+      var setMenu = function (open) {
+        document.body.classList.toggle("menu-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+      };
+      toggle.addEventListener("click", function () { setMenu(!document.body.classList.contains("menu-open")); });
+      document.querySelectorAll("#nav a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+
+      var items = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+        items.forEach(function (el) { io.observe(el); });
+      } else {
+        items.forEach(function (el) { el.classList.add("in"); });
+      }
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
